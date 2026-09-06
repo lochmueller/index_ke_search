@@ -1,0 +1,69 @@
+{
+  "name": "lochmueller/index-ke-search",
+  "description": "Bridge between EXT:index and EXT:ke_search - writes the indexing events of EXT:index into the ke_search index",
+  "license": "GPL-2.0-or-later",
+  "type": "typo3-cms-extension",
+  "keywords": [
+    "typo3",
+    "index",
+    "indexing",
+    "ke_search",
+    "kesearch",
+    "bridge",
+    "search"
+  ],
+  "require": {
+    "php": "^8.3",
+    "lochmueller/index": "^2.3",
+    "tpwd/ke_search": "^6.0 || ^7.0",
+    "typo3/cms-core": "^13.4 || ^14.2"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.84",
+    "phpstan/phpstan": "^2.1",
+    "typo3/testing-framework": "^9.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Lochmueller\\IndexKeSearch\\": "Classes/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Lochmueller\\IndexKeSearch\\Tests\\": "Tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "typo3/class-alias-loader": true,
+      "typo3/cms-composer-installers": true
+    },
+    "bin-dir": ".Build/bin",
+    "vendor-dir": ".Build/vendor"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "1.0.x-dev"
+    },
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "extension-key": "index_ke_search",
+      "web-dir": ".Build/Web"
+    }
+  },
+  "scripts": {
+    "code-check": [
+      "@phpstan"
+    ],
+    "code-fix": [
+      "@php-cs-fixer"
+    ],
+    "code-test": [
+      "@phpunit"
+    ],
+    "code-test-coverage": "XDEBUG_MODE=coverage phpunit -c Tests/UnitTests.xml --coverage-html .Build/coverage/",
+    "php-cs-fixer": "php-cs-fixer fix --allow-unsupported-php-version yes",
+    "phpstan": "phpstan analyse Classes --memory-limit 1G --level 8",
+    "phpunit": "phpunit -c Tests/UnitTests.xml"
+  }
+}

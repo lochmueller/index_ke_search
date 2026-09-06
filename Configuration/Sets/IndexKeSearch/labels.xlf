@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2026-09-06T00:00:00Z" product-name="index_ke_search">
+        <header/>
+        <body>
+            <trans-unit id="label">
+                <source>Index to ke_search Bridge</source>
+            </trans-unit>
+            <trans-unit id="categories.indexKeSearch">
+                <source>ke_search Bridge</source>
+            </trans-unit>
+            <trans-unit id="categories.description.indexKeSearch">
+                <source>Writes the indexing events of EXT:index into the ke_search index of this site.</source>
+            </trans-unit>
+
+            <trans-unit id="settings.indexKeSearch.enable">
+                <source>Enable the bridge</source>
+            </trans-unit>
+            <trans-unit id="settings.description.indexKeSearch.enable">
+                <source>Write the indexing events of EXT:index into the ke_search index for this site.</source>
+            </trans-unit>
+
+            <trans-unit id="settings.indexKeSearch.storagePid">
+                <source>Storage folder (PID)</source>
+            </trans-unit>
+            <trans-unit id="settings.description.indexKeSearch.storagePid">
+                <source>Page uid of the folder the index records are stored in ("pid" column of tx_kesearch_index). Use a dedicated folder that is not used by any ke_search indexer configuration. Required.</source>
+            </trans-unit>
+
+            <trans-unit id="settings.indexKeSearch.targetPid">
+                <source>Target page (PID)</source>
+            </trans-unit>
+            <trans-unit id="settings.description.indexKeSearch.targetPid">
+                <source>Page uid the search results of files and external documents link to (usually the search result page). ke_search rejects records without a target page, so this value is required.</source>
+            </trans-unit>
+
+            <trans-unit id="settings.indexKeSearch.pageType">
+                <source>Index type for pages</source>
+            </trans-unit>
+            <trans-unit id="settings.description.indexKeSearch.pageType">
+                <source>Value of the "type" column for indexed pages. "page" makes ke_search link to the page uid. Change it only if you need an own result type.</source>
+            </trans-unit>
+
+            <trans-unit id="settings.indexKeSearch.externalType">
+                <source>Index type for external documents</source>
+            </trans-unit>
+            <trans-unit id="settings.description.indexKeSearch.externalType">
+                <source>Value of the "type" column for documents without a page or FAL file (external pages and remote files). "external" makes ke_search link to the stored URI.</source>
+            </trans-unit>
+
+            <trans-unit id="settings.indexKeSearch.filterOption">
+                <source>Filter option (tag)</source>
+            </trans-unit>
+            <trans-unit id="settings.description.indexKeSearch.filterOption">
+                <source>Optional uid of a ke_search filter option (tx_kesearch_filteroptions). Its tag is added to every document of this bridge, which allows filtering the results by source.</source>
+            </trans-unit>
+
+            <trans-unit id="settings.indexKeSearch.pageKeywordsAsTags">
+                <source>Page keywords as tags</source>
+            </trans-unit>
+            <trans-unit id="settings.description.indexKeSearch.pageKeywordsAsTags">
+                <source>Convert the keywords of a page into ke_search tags.</source>
+            </trans-unit>
+
+            <trans-unit id="settings.indexKeSearch.cleanupAfterFullIndex">
+                <source>Remove outdated documents after a full index run</source>
+            </trans-unit>
+            <trans-unit id="settings.description.indexKeSearch.cleanupAfterFullIndex">
+                <source>Delete all documents of the storage folder that have not been written again during a full EXT:index run. Only enable this if the storage folder is used exclusively by this bridge and all EXT:index configurations of the site are executed together.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

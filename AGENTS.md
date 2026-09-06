@@ -7,7 +7,7 @@
 - **Purpose**: Bridge between EXT:index and EXT:ke_search - the indexing events of EXT:index are
   written into the ke_search index (`tx_kesearch_index`)
 - **Language**: PHP 8.3+
-- **Framework**: TYPO3 CMS v13.4 / v14
+- **Framework**: TYPO3 CMS v13.4.15+ / v14
 - **Namespace**: `Lochmueller\IndexKeSearch\`
 
 ## Build/Lint/Test Commands
@@ -28,15 +28,15 @@ composer code-test-coverage # PHPUnit with coverage
 ```
 Classes/                # PSR-4: Lochmueller\IndexKeSearch\
   Bridge/               # Wrapper around \Tpwd\KeSearch\Indexer\IndexerRunner
-  Configuration/        # Site configuration DTO + loader
+  Configuration/        # Site settings DTO + loader
   Dto/                  # IndexDocument, FileInformation
   Event/                # PSR-14 events of this extension
   EventListener/        # Listeners for the EXT:index events
   Mapper/               # EXT:index event -> ke_search index record
   Repository/           # Deletion queries on tx_kesearch_index
   Utility/              # URI hashing
-Configuration/          # Services.yaml, Icons.php, SiteConfiguration
-Resources/              # Language files, icon
+Configuration/          # Services.yaml, Icons.php, Sets/ (site set + settings definitions)
+Resources/              # Icon
 Tests/Unit/             # Unit tests
 ```
 
@@ -49,6 +49,15 @@ Tests/Unit/             # Unit tests
   EXT:index configuration record**, not per site.
 - **EXT:ke_search** stores everything in `tx_kesearch_index` and identifies a record by
   `orig_uid + pid + type + language` (files: `type + hash + pid + sortdate + language`).
+
+### Configuration lives in site settings
+
+The bridge ships the site set `lochmueller/index-ke-search`
+(`Configuration/Sets/IndexKeSearch/`). The settings are only available for sites that list the set in
+their `dependencies`. Labels and descriptions are resolved by the site set convention from
+`labels.xlf` (`settings.<key>` / `settings.description.<key>` / `categories.<id>`), so a new setting
+needs three places: `settings.definitions.yaml`, `labels.xlf` and
+`Configuration::SETTING_IDENTIFIERS` - `SetDefinitionTest` fails if they drift apart.
 
 ### IndexerRunner setup
 

@@ -1,0 +1,43 @@
+categories:
+  indexKeSearch: {}
+
+settings:
+  indexKeSearch.enable:
+    category: indexKeSearch
+    type: bool
+    default: true
+
+  indexKeSearch.storagePid:
+    category: indexKeSearch
+    type: page
+    default: 0
+
+  indexKeSearch.targetPid:
+    category: indexKeSearch
+    type: page
+    default: 0
+
+  indexKeSearch.pageType:
+    category: indexKeSearch
+    type: string
+    default: 'page'
+
+  indexKeSearch.externalType:
+    category: indexKeSearch
+    type: string
+    default: 'external'
+
+  indexKeSearch.filterOption:
+    category: indexKeSearch
+    type: int
+    default: 0
+
+  indexKeSearch.pageKeywordsAsTags:
+    category: indexKeSearch
+    type: bool
+    default: true
+
+  indexKeSearch.cleanupAfterFullIndex:
+    category: indexKeSearch
+    type: bool
+    default: false

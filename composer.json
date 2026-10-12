@@ -15,7 +15,7 @@
   "require": {
     "php": "^8.3",
     "lochmueller/index": "^2.3",
-    "tpwd/ke_search": "^6.0 || ^7.0",
+    "tpwd/ke_search": "^7.2",
     "typo3/cms-core": "^13.4.15 || ^14.2"
   },
   "require-dev": {

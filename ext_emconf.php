@@ -4,7 +4,7 @@
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Index to ke_search Bridge',
     'description' => 'Bridge between EXT:index and EXT:ke_search - writes the indexing events of EXT:index into the ke_search index',
-    'version' => '1.0.0',
+    'version' => '0.0.1',
     'category' => 'be',
     'constraints' => [
         'depends' => [
